@@ -12,7 +12,7 @@ function SimpleHtmlPrecompiler (staticDir, paths, options) {
 SimpleHtmlPrecompiler.prototype.apply = function (compiler) {
   var self = this
   compiler.plugin('after-emit', function (compilation, done) {
-    const publicPath = compilation.outputOptions.publicPath || '/'
+    const publicPath = compilation.outputOptions.publicPath
 
     Promise.all(
       self.paths.map(function (outputPath) {
